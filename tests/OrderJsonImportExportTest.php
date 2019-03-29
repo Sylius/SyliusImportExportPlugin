@@ -857,6 +857,12 @@ LOL
                         "Name": "distinctio"
                     }
                 },
+                "ChannelPricings": {
+                    "US_WEB": {
+                        "Price": 675,
+                        "OriginalPrice": null
+                    }
+                },
                 "Options": [
                     "t_shirt_color_red",
                     "t_shirt_size_s"
@@ -880,6 +886,12 @@ LOL
                 "Translations": {
                     "en_US": {
                         "Name": "dolor"
+                    }
+                },
+                "ChannelPricings": {
+                    "US_WEB": {
+                        "Price": 875,
+                        "OriginalPrice": null
                     }
                 },
                 "Options": [
@@ -907,6 +919,12 @@ LOL
                         "Name": "dolor"
                     }
                 },
+                "ChannelPricings": {
+                    "US_WEB": {
+                        "Price": 555,
+                        "OriginalPrice": null
+                    }
+                },
                 "Options": [
                     "t_shirt_color_red",
                     "t_shirt_size_s"
@@ -932,6 +950,12 @@ LOL
                         "Name": "dolor"
                     }
                 },
+                "ChannelPricings": {
+                    "US_WEB": {
+                        "Price": 420,
+                        "OriginalPrice": null
+                    }
+                },
                 "Options": [
                     "t_shirt_color_red",
                     "t_shirt_size_m"
@@ -955,6 +979,12 @@ LOL
                 "Translations": {
                     "en_US": {
                         "Name": "dolor"
+                    }
+                },
+                "ChannelPricings": {
+                    "US_WEB": {
+                        "Price": 12675,
+                        "OriginalPrice": null
                     }
                 },
                 "Options": [

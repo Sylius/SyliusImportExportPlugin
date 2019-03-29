@@ -102,8 +102,7 @@ final class ProductJsonImportExportTest extends AbstractJsonImportExportTest
                 "ChannelPricings": {
                     "US_WEB": {
                         "Price": 675,
-                        "OriginalPrice": null,
-                        "PriceReduced": false
+                        "OriginalPrice": null
                     }
                 },
                 "Options": [
@@ -134,8 +133,7 @@ final class ProductJsonImportExportTest extends AbstractJsonImportExportTest
                 "ChannelPricings": {
                     "US_WEB": {
                         "Price": 675,
-                        "OriginalPrice": null,
-                        "PriceReduced": false
+                        "OriginalPrice": null
                     }
                 },
                 "Options": [
@@ -220,8 +218,7 @@ final class ProductJsonImportExportTest extends AbstractJsonImportExportTest
                 "ChannelPricings": {
                     "US_WEB": {
                         "Price": 675,
-                        "OriginalPrice": null,
-                        "PriceReduced": false
+                        "OriginalPrice": null
                     }
                 },
                 "Options": []

@@ -104,7 +104,6 @@ final class ProductResourcePlugin extends ResourcePlugin
                     $channelPricings[$channelPricing->getChannelCode()] = [
                         'Price' => $channelPricing->getPrice(),
                         'OriginalPrice' => $channelPricing->getOriginalPrice(),
-                        'PriceReduced' => $channelPricing->isPriceReduced(),
                     ];
                 }
 
