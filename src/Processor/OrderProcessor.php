@@ -81,6 +81,9 @@ final class OrderProcessor implements ResourceProcessorInterface
     /** @var array */
     private $orderStatesApplicableToImport;
 
+    /** @var bool */
+    private $alwaysCreateNew;
+
     /** @var string[] */
     private $headerKeys;
 
@@ -103,6 +106,7 @@ final class OrderProcessor implements ResourceProcessorInterface
         DateTimeFormatterInterface $dateTimeFormatter,
         MetadataValidatorInterface $metadataValidator,
         array $orderStatesApplicableToImport,
+        bool $alwaysCreateNew,
         array $headerKeys
     ) {
         $this->orderFactory = $orderFactory;
@@ -123,6 +127,7 @@ final class OrderProcessor implements ResourceProcessorInterface
         $this->dateTimeFormatter = $dateTimeFormatter;
         $this->metadataValidator = $metadataValidator;
         $this->orderStatesApplicableToImport = $orderStatesApplicableToImport;
+        $this->alwaysCreateNew = $alwaysCreateNew;
         $this->headerKeys = $headerKeys;
     }
 
@@ -179,16 +184,26 @@ final class OrderProcessor implements ResourceProcessorInterface
 
     private function getOrder(string $number): OrderInterface
     {
+        if ($this->alwaysCreateNew) {
+            return $this->createOrder($number);
+        }
+
         /** @var OrderInterface|null $order */
         $order = $this->orderRepository->findOneByNumber($number);
 
-        if ($order === null) {
-            /** @var OrderInterface $order */
-            $order = $this->orderFactory->createNew();
-            $order->setNumber($number);
-
-            $this->manager->persist($order);
+        if (null === $order) {
+            return $this->createOrder($number);
         }
+
+        return $order;
+    }
+
+    private function createOrder(string $number): OrderInterface
+    {
+        /** @var OrderInterface $order */
+        $order = $this->orderFactory->createNew();
+        $order->setNumber($number);
+        $this->manager->persist($order);
 
         return $order;
     }

@@ -27,6 +27,7 @@ parameters:
     sylius.order_states_applicable_to_import:
         - "new"
         - "fulfilled"
+    sylius.order.always_create_new: true
 
 services:
     sylius.exporter.orders.json:
@@ -59,6 +60,7 @@ services:
             $dateTimeFormatter: '@FriendsOfSylius\SyliusImportExportPlugin\Formatter\DateTimeFormatter'
             $metadataValidator: "@sylius.importer.metadata_validator"
             $orderStatesApplicableToImport: "%sylius.order_states_applicable_to_import%"
+            $alwaysCreateNew: "%sylius.order.always_create_new%"
             $headerKeys: "%sylius.order_fields%"
 
     sylius.importer.orders.json:
